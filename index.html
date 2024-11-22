@@ -1,25 +1,213 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>MediLook App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediLook - Your Intelligent Prescription Companion</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #2C7BE5;
+            --secondary-color: #4A90E2;
+            --text-color: #2D3748;
+            --light-bg: #F7FAFC;
+            --accent-color: #48BB78;
+        }
+
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #ffffff 0%, var(--light-bg) 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
         }
-        .container {
-            max-width: 800px;
+
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            max-width: 600px;
             margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "→";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .privacy-note {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>MediLook App</h1>
-        <p>Welcome to MediLook App page</p>
+        <header class="header">
+            <h1>MediLook</h1>
+            <p>Your intelligent prescription companion that makes understanding your medications simple and secure.</p>
+        </header>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Quick Prescription Scanner</h3>
+                <ul class="feature-list">
+                    <li>Upload or snap prescription photos</li>
+                    <li>Instant medication information</li>
+                    <li>Smart text recognition</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Comprehensive Details</h3>
+                <ul class="feature-list">
+                    <li>Usage instructions</li>
+                    <li>Side effects</li>
+                    <li>Important warnings</li>
+                    <li>Drug interactions</li>
+                    <li>Proper dosage</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Enhanced Security</h3>
+                <ul class="feature-list">
+                    <li>Face ID protection</li>
+                    <li>Secure data storage</li>
+                    <li>Private and confidential</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>User-Friendly Design</h3>
+                <ul class="feature-list">
+                    <li>Clean, intuitive interface</li>
+                    <li>Easy navigation</li>
+                    <li>Dark mode support</li>
+                    <li>Search history tracking</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Perfect for Everyone</h2>
+            <ul class="feature-list" style="display: inline-block; text-align: left; margin-top: 20px;">
+                <li>Patients managing multiple medications</li>
+                <li>Caregivers tracking prescriptions</li>
+                <li>Anyone wanting to better understand their medicine</li>
+            </ul>
+            <a href="#" class="cta-button">Download MediLook</a>
+        </div>
+
+        <div class="privacy-note">
+            <strong>System Requirements:</strong> iOS 14.0 or later. Internet connection needed for medication information updates.<br><br>
+            <strong>Privacy Commitment:</strong> All medical information is securely stored on your device and protected with industry-standard encryption.
+        </div>
     </div>
 </body>
 </html>
